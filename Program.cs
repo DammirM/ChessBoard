@@ -15,45 +15,51 @@ namespace ChessBoard
 
             int number = int.Parse(Console.ReadLine());
 
-            Console.Clear();
             
 
-            for (int i = 0; i < number; i++)
-            {
+            Console.Clear();
 
-                for (int j = 0; j < number; j++)
-                {
+            chess(number);
 
 
-                    if ((i + j) % 3 == 0)
-                    {
-                        Console.Write("■");
+            //for (int i = 0; i < number; i++)
+            //{
 
-                    }
-                    else
-                    {
-                        Console.Write("□");
+            //    for (int j = 0; j < number; j++)
+            //    {
 
-                    }
 
-                    
-                }
-                Console.WriteLine();
-            }
+            //        if ((i + j) % 3 == 0)
+            //        {
+            //            Console.Write("■");
+
+            //        }
+            //        else
+            //        {
+            //            Console.Write("□");
+
+            //        }
+
+
+            //    }
+            //    Console.WriteLine();
+            //}
 
             Console.ReadKey();
             Console.Clear();
 
-                
 
 
-                Console.WriteLine("Do you wish to put a character on your board? Please type Yes or No");
 
-                string userChoice = Console.ReadLine();
+            Console.WriteLine("Do you wish to put a character on your board? Please type Yes or No");
 
-                if (userChoice == "Yes")
-                {
-                    Console.WriteLine("Welcome to play!");
+            string userChoice = Console.ReadLine();
+
+            userChoice = userChoice.ToUpper();
+
+            if (userChoice == "YES")
+            {
+                Console.WriteLine("Welcome to play!");
 
                 Console.WriteLine("Select the size of your chessboard");
                 int size = int.Parse(Console.ReadLine());
@@ -90,23 +96,48 @@ namespace ChessBoard
                     Console.WriteLine();
                 }
 
-                }
-                else if (userChoice == "No")
+            }
+            else if (userChoice == "No")
+            {
+                Console.WriteLine("Bye!!");
+            }
+
+
+
+
+
+
+            static void chess(int number)
+            {
+                for (int i = 0; i < number; i++)
                 {
-                    Console.WriteLine("Bye!!");
+
+                    for (int j = 0; j < number; j++)
+                    {
+
+
+                        if ((i + j) % 3 == 0)
+                        {
+                            Console.Write("■");
+
+                        }
+                        else
+                        {
+                            Console.Write("□");
+
+                        }
+
+
+                    }
+                    Console.WriteLine();
                 }
-                
+            }
 
 
 
-                     
 
-
-
-           
         }
-        
-        
-    }
 
+
+    }
 }
